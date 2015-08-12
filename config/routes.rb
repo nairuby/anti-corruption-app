@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
+    get 'dashboard/posts'
 
   devise_for :admins
   devise_for :users
     
     get 'pages/index'
+    get 'pages/hotzones'
     root 'pages#index'
     
     get 'dashboard' => 'dashboard#index', as: :dashboard
+    get 'hotzones' => 'pages#hotzones', as: :hotzones
+    get 'posts' => 'dashboard#posts', as: :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

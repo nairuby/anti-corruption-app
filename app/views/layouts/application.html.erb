@@ -18,6 +18,11 @@
           <%= link_to "Anti Corruption App", root_path, :class => 'navbar-brand' %>
       </div>
       <div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: 2em;">
+          
+          <ul class="nav navbar-nav navbar-left">
+              <li><%= link_to "HotZones", hotzones_path %></li>
+          </ul>
+          
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
                 <li><%= link_to('Dashboard', dashboard_path) %></li>
