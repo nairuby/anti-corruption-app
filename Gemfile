@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # for users
 gem 'devise'
 
+# to make running my applications easier
+gem 'rails_12factor', group: :production
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
