@@ -7,11 +7,13 @@ Rails.application.routes.draw do
     
     get 'pages/index'
     get 'pages/hotzones'
+    get 'pages/forum'
     root 'pages#index'
     
     get 'dashboard' => 'dashboard#index', as: :dashboard
     get 'hotzones' => 'pages#hotzones', as: :hotzones
     get 'posts' => 'dashboard#posts', as: :posts
+    get 'forum' => 'pages#forum', as: :forum
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
