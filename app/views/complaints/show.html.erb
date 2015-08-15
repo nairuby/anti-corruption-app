@@ -1,0 +1,56 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %></br>
+
+<a class="btn btn-primary btn-lg"<%= link_to("<< Back to Complaints List", {:action => 'index'}, :class => 'back-link') %></a></br>
+
+<div class="complaints show">
+  <h2>Show Complaints</h2>
+
+  <table summary="Complaint detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @complaint.name %></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td><%= @complaint.gender %></td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td><%= @complaint.age %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @complaint.incident_location %></td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td><%= @complaint.phone %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @complaint.email %></td>
+    </tr>
+     <tr>
+      <th>Duty Bearer</th>
+      <td><%= @complaint.duty_bearer %></td>
+    </tr>
+    <tr>
+      <th>Feedback</th>
+      <td><%= @complaint.feedback %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @complaint.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @complaint.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
+

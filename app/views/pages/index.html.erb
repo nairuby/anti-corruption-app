@@ -9,7 +9,9 @@
         <div class="col-md-4">
             <h1>Nairuby, Bi-Weekly Project Thursday</h1>
             <p>This is an application that can be used to monitor and update users on incidents of corruption within institutions and organizations in Country</p>
-            <a class="btn btn-primary btn-lg" href="#">Report A Case!</a>
+            
+            <a class="btn btn-primary btn-lg" <%= link_to("Report A Case", {:controller => 'complaints', :action => 'new'}, :class => 'action new') %></a>
+
         </div>
         <!-- /.col-md-4 -->
     </div>

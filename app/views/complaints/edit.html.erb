@@ -1,0 +1,52 @@
+
+<a class="btn btn-primary btn-lg" <%= link_to("<<Back to Complaints view", {:action => 'index'}, :class => 'back-link') %></a> 
+
+
+<div class="complaints new">
+  <h2>Update Complaint</h2>
+
+  <%= form_for(:complaint, :url => {:action => 'update', :id => @complaint.id}) do |f| %>
+
+    <table summary="Complaint form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td><%= f.text_field(:gender) %></td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td><%= f.text_field(:age) %></td>
+      </tr>
+      <tr>
+        <th>where did the incident happen? </th>
+        <td><%= f.text_field(:incident_location) %></td>
+      </tr>    
+      <tr>
+        <th>Phone Number</th>
+        <td><%= f.text_field(:phone) %></td>
+      </tr>
+      <tr>
+        <th>Email Address</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Who are you complaining against?</th>
+        <td><%= f.text_field(:duty_bearer) %></td>
+      </tr>
+      <tr>
+        <th>Explain what happened</th>
+        <td><%= f.text_field(:feedback) %></td>
+      </tr>
+
+   </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Complaint") %>
+    </div>
+
+  <% end %>
+</div>
+

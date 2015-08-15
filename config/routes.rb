@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  match ':controller(/:action(/:id))', :via => [:get, :post] #Default route
+
+  #get 'complaints/index'
+
+  #get 'complaints/show'
+
+  #get 'complaints/new'
+
+  #get 'complaints/edit'
+
+  #get 'complaints/delete'
+
   get 'dashboard/index'
     get 'dashboard/posts'
 
