@@ -1,0 +1,17 @@
+<a class="btn btn-primary btn-lg" <%= link_to("<< Back to complaints View", {:action => 'index'}, :class => 'back-link') %></a>
+
+<div class="complaints delete">
+  <h2>Delete Complaint</h2>
+
+  <%= form_for(:complaint, :url => {:action => 'destroy', :id => @complaint.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this complaint?</p>
+
+    <p class="reference-name"><%= @complaint.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Complaint") %>
+    </div>
+
+  <% end %>
+</div>
