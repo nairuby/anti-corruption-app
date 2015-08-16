@@ -1,6 +1,6 @@
 class ComplaintsController < ApplicationController
 
-  layout "complaint"
+  #layout "complaint"
 
   def index
     @complaints = Complaint.newest_first

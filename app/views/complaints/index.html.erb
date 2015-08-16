@@ -7,9 +7,10 @@
 <div class="complaints index">
    <a class="btn btn-primary btn-lg" <%= link_to("Back to Dashboard", {:controller => 'dashboard', :action => 'index'}, :class => 'action index') %></div></a><br></div><br>
 
-  <table class="listing" summary="Complaint list">
+  <table class="listing" summary="Complaint list" id="complaints">
+  <thead>
     <tr class="header">
-      <th>&nbsp;</th>
+      
       <th>Name</th>
       <th>Gender</th>
       <th>Age</th>
@@ -18,7 +19,10 @@
       <th>Email</th>
       <th>Duty Bearer</th>
       <th>Feedback</th>
+      <th>Actions</th>
     </tr>
+    </thead>
+    <tbody>
     <% @complaints.each do |complaint| %>
     <tr>
       <td><%= complaint.name %></td>
@@ -29,7 +33,6 @@
       <td><%= complaint.email %></td>
       <td><%= complaint.duty_bearer %></td>
       <td><%= complaint.feedback %></td>
-      
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => complaint.id}, :class => 'action show') %>
         <%= link_to("Edit", {:action => 'edit', :id => complaint.id}, :class => 'action edit') %>
@@ -37,6 +40,7 @@
       </td>
     </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
 
