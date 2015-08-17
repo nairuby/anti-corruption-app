@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   #get 'complaints/delete'
 
-  get 'dashboard/index'
+    get 'dashboard/index'
     get 'dashboard/posts'
 
-  devise_for :admins
-  devise_for :users
+    devise_for :admins
+    devise_for :users
     
     get 'pages/index'
     get 'pages/hotzones'

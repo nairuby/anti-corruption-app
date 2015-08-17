@@ -11,6 +11,9 @@ gem 'bootstrap-material-design'
 gem 'bootstrap-sass'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-ui-rails'
+
+
+gem 'will_paginate'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
