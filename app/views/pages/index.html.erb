@@ -29,32 +29,24 @@
     </div>
     <!-- /.row -->
     
-    <div class="list-group" style="margin-top: 2em;">
-        <div class="list-group-item">
-            <div class="row-action-primary">
-<!--                <i class="mdi-action-face-unlock"></i>-->
-                <%= (image_tag 'http://lorempixel.com/56/56/people/1', :class => 'circle') %>
+    <% @complaints.each do |complaint| %>
+    
+        <div class="list-group" style="margin-top: 2em;">
+            <div class="list-group-item">
+                <div class="row-action-primary">
+    <!--                <i class="mdi-action-face-unlock"></i>-->
+                    <%#= (image_tag 'http://lorempixel.com/56/56/people/1', :class => 'circle') %>
+                </div>
+                <div class="row-content">
+                    <div class="least-content">20m</div>
+                    <h4 class="list-group-item-heading"><%= complaint.incident_location %></h4>
+                    <p class="list-group-item-text"><%= complaint.feedback %></p>
+                </div>
             </div>
-            <div class="row-content">
-                <div class="least-content">20m</div>
-                <h4 class="list-group-item-heading">Institute/Company Name</h4>
-                <p class="list-group-item-text">Description of the incident</p>
-            </div>
+            <div class="list-group-separator"></div>
         </div>
-        <div class="list-group-separator"></div>
-        <div class="list-group-item">
-            <div class="row-action-primary">
-<!--                <i class="mdi-file-folder"></i>-->
-                <%= (image_tag 'http://lorempixel.com/56/56/people/6', :class => 'circle') %>
-            </div>
-            <div class="row-content">
-                <div class="least-content">15m</div>
-                <h4 class="list-group-item-heading">Institute/Company Name</h4>
-                <p class="list-group-item-text">Description of the incident</p>
-            </div>
-        </div>
-        <div class="list-group-separator"></div>
-    </div>
+    <% end %>
+</div>
     
     <div align="center">
         <ul class="pagination pagination-lg">

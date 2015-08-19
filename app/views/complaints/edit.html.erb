@@ -6,45 +6,41 @@
   <h2>Update Complaint</h2>
 
   <%= form_for(:complaint, :url => {:action => 'update', :id => @complaint.id}) do |f| %>
-
-    <table summary="Complaint form fields">
-      <tr>
-        <th>Name</th>
-        <td><%= f.text_field(:name) %></td>
-      </tr>
-      <tr>
-        <th>Gender</th>
-        <td><%= f.text_field(:gender) %></td>
-      </tr>
-      <tr>
-        <th>Age</th>
-        <td><%= f.text_field(:age) %></td>
-      </tr>
-      <tr>
-        <th>where did the incident happen? </th>
-        <td><%= f.text_field(:incident_location) %></td>
-      </tr>    
-      <tr>
-        <th>Phone Number</th>
-        <td><%= f.text_field(:phone) %></td>
-      </tr>
-      <tr>
-        <th>Email Address</th>
-        <td><%= f.text_field(:email) %></td>
-      </tr>
-      <tr>
-        <th>Who are you complaining against?</th>
-        <td><%= f.text_field(:duty_bearer) %></td>
-      </tr>
-      <tr>
-        <th>Explain what happened</th>
-        <td><%= f.text_field(:feedback) %></td>
-      </tr>
-
-   </table>
+    <div class="form-group">
+        <% f.label :name %>
+        <%= f.text_field(:name, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label :gender %>
+        <%= f.text_field(:gender, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label :age %>
+        <%= f.text_field(:age, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label 'Where Did the Incident Happen ?' %>
+        <%= f.text_field(:incident_location, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label 'Phone Number' %>
+        <%= f.text_field(:phone, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label 'Email Address' %>
+        <%= f.text_field(:email, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label 'Who are You Complaining Against ?' %>
+        <%= f.text_field(:duty_bearer, :class => 'form-control floating-label') %>
+    </div>
+    <div class="form-group">
+        <% f.label 'Explain What Happened ?' %>
+        <%= f.text_area(:feedback, :class => 'form-control floating-label') %>
+    </div>
 
     <div class="form-buttons">
-      <%= submit_tag("Update Complaint") %>
+        <%= submit_tag("Update Complaint", :class => 'btn btn-lg btn-success btn-raised') %>
     </div>
 
   <% end %>

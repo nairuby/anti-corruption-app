@@ -1,58 +1,60 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-</br>
+<div class="container">
+  <h2 align="center">Submit Complaint</h2>
 
-<a class="btn btn-primary btn-lg" <%= link_to("<<Back to Home Page", {:controller => 'pages', :action => 'index'}, :class => 'back-link') %></a> </br>
+  <%= form_for(:complaint, :url => {:action => 'create'}, :class => 'form-horizontal') do |f| %>
+    <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field(:name, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label :gender %><br />
+        <%= f.text_field(:gender, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label :age %><br />
+        <%= f.text_field(:age, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label 'Where Did the Incident Happen ?' %><br />
+        <%= f.text_field(:incident_location, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label 'Phone Number' %><br />
+        <%= f.text_field(:phone, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label 'Email Address' %><br />
+        <%= f.text_field(:email, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label 'Who Are You Complaining Against ?' %><br />
+        <%= f.text_field(:duty_bearer, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
+    <div class="form-group">
+        <%= f.label :feedback %><br />
+        <%= f.text_area(:feedback, :class => 'form-control floating-label', :required => 'true') %>
+    </div>
 
-
-<div class="complaints new">
-  <h2>Submit Complaint</h2>
-
-  <%= form_for(:complaint, :url => {:action => 'create'}) do |f| %>
-
-    <table summary="Complaint form fields">
-      <tr>
-        <th>Name</th>
-        <td><%= f.text_field(:name) %></td>
-      </tr>
-      <tr>
-        <th>Gender</th>
-        <td><%= f.text_field(:gender) %></td>
-      </tr>
-      <tr>
-        <th>Age</th>
-        <td><%= f.text_field(:age) %></td>
-      </tr>
-      <tr>
-        <th>where did the incident happen? </th>
-        <td><%= f.text_field(:incident_location) %></td>
-      </tr>    
-      <tr>
-        <th>Phone Number</th>
-        <td><%= f.text_field(:phone) %></td>
-      </tr>
-      <tr>
-        <th>Email Address</th>
-        <td><%= f.text_field(:email) %></td>
-      </tr>
-      <tr>
-        <th>Who are you complaining against?</th>
-        <td><%= f.text_field(:duty_bearer) %></td>
-      </tr>
-      <tr>
-        <th>Explain what happened</th>
-        <td><%= f.text_field(:feedback) %></td>
-      </tr>
-
-   </table>
-
-    <div class="form-buttons">
-      <%= submit_tag("Submit Complaint") %>
+    <div class="actions" align="center">
+        <a class="btn btn-info btn-lg btn-raised" <%= link_to("<< Back Home", {:controller => 'pages', :action => 'index'}, :class => 'back-link') %></a>
+        <%= f.submit "Submit Complaint", :class => 'btn btn-primary btn-lg btn-raised' %>
     </div>
 
   <% end %>
+    
 </div>
+
+<!--
+<%# if !flash[:notice].blank? %>
+  <div class="notice">
+    <%#= flash[:notice] %>
+  </div>
+<%# end %>
+</br>
+-->
+
+
+
+
+
 

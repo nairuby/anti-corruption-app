@@ -1,17 +1,22 @@
-<a class="btn btn-primary btn-lg" <%= link_to("<< Back to complaints View", {:action => 'index'}, :class => 'back-link') %></a>
-
-<div class="complaints delete">
-  <h2>Delete Complaint</h2>
-
-  <%= form_for(:complaint, :url => {:action => 'destroy', :id => @complaint.id}) do |f| %>
-
-    <p>Are you sure you want to permanently delete this complaint?</p>
-
-    <p class="reference-name"><%= @complaint.name %></p>
-
-    <div class="form-buttons">
-      <%= submit_tag("Delete Complaint") %>
+<div align="center">
+    <div style="width:500px" align='left'>
+        <div style="margin-top: 3em;">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h2 align="center" class="panel-title"><%= 'Delete Complaint' %></h2>
+                </div>
+                <div class="panel-body">
+                    <%= form_for(:complaint, :url => {:action => 'destroy', :id => @complaint.id}) do |f| %>
+                        <h3>Are you sure you want to permanently delete this complaint?</h3>
+                        <p class="reference-name" align="center"><%= @complaint.name %></p>
+                        <div class="form-buttons">
+                            <%= submit_tag("Delete Complaint", :class => 'btn btn-raised') %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
     </div>
-
-  <% end %>
 </div>
+
+<a class="btn btn-primary" <%= link_to("<< Back to complaints View", {:action => 'index'}, :class => 'back-link') %></a>

@@ -1,10 +1,12 @@
-<% if !flash[:notice].blank? %>
+<!--
+<%# if !flash[:notice].blank? %>
   <div class="notice">
-    <%= flash[:notice] %>
+    <%#= flash[:notice] %>
   </div>
-<% end %></br>
+<%# end %></br>
+-->
 
-<a class="btn btn-primary btn-lg"<%= link_to("<< Back to Complaints List", {:action => 'index'}, :class => 'back-link') %></a></br>
+<a class="btn btn-primary"<%= link_to("<< Back to Complaints List", {:action => 'index'}, :class => 'back-link') %></a></br>
 
 <div class="complaints show">
   <h2>Show Complaints</h2>

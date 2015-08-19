@@ -1,47 +1,54 @@
-<% if !flash[:notice].blank? %>
+<div class="container" style="margin-top: 3em;">
+    <table class="listing" summary="Complaint list" id="complaints">
+        <thead>
+            <tr class="header">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Incident Location</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Duty Bearer</th>
+                <th>Feedback</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @complaints.each do |complaint| %>
+            <tr>
+                <td><%= complaint.name %></td>
+                <td><%= complaint.gender %></td>
+                <td><%= complaint.age %></td>
+                <td><%= complaint.incident_location %></td>
+                <td><%= complaint.phone %></td>
+                <td><%= complaint.email %></td>
+                <td><%= complaint.duty_bearer %></td>
+                <td><%= complaint.feedback %></td>
+                <td class="actions">
+                    <ul>
+                        <li><%= link_to("Show", {:action => 'show', :id => complaint.id}, :class => 'action show') %></li>
+                        <li><%= link_to("Edit", {:action => 'edit', :id => complaint.id}, :class => 'action edit') %></li>
+                        <li><%= link_to("Delete", {:action => 'delete', :id => complaint.id}, :class => 'action delete') %></li>
+                    </ul>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!--
+<%# if !flash[:notice].blank? %>
   <div class="notice">
-    <%= flash[:notice] %>
+    <%#= flash[:notice] %>
   </div>
-<% end %></br>
+<%# end %></br>
+-->
 
 <div class="complaints index">
-   <a class="btn btn-primary btn-lg" <%= link_to("Back to Dashboard", {:controller => 'dashboard', :action => 'index'}, :class => 'action index') %></div></a><br></div><br>
-
-  <table class="listing" summary="Complaint list" id="complaints">
-  <thead>
-    <tr class="header">
-      
-      <th>Name</th>
-      <th>Gender</th>
-      <th>Age</th>
-      <th>Incident Location</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Duty Bearer</th>
-      <th>Feedback</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @complaints.each do |complaint| %>
-    <tr>
-      <td><%= complaint.name %></td>
-      <td><%= complaint.gender %></td>
-      <td><%= complaint.age %></td>
-      <td><%= complaint.incident_location %></td>
-      <td><%= complaint.phone %></td>
-      <td><%= complaint.email %></td>
-      <td><%= complaint.duty_bearer %></td>
-      <td><%= complaint.feedback %></td>
-      <td class="actions">
-        <%= link_to("Show", {:action => 'show', :id => complaint.id}, :class => 'action show') %>
-        <%= link_to("Edit", {:action => 'edit', :id => complaint.id}, :class => 'action edit') %>
-        <%= link_to("Delete", {:action => 'delete', :id => complaint.id}, :class => 'action delete') %>
-      </td>
-    </tr>
-    <% end %>
-    </tbody>
-  </table>
+   <a class="btn btn-primary" <%= link_to("Back to Dashboard", {:controller => 'dashboard', :action => 'index'}, :class => 'action index') %>
 </div>
 
                        
