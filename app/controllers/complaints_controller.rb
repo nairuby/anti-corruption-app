@@ -8,7 +8,6 @@ class ComplaintsController < ApplicationController
   end
   def new
     @complaint = Complaint.new 
-#    flash[:notice] = "Complaint submitted successfully"
   end
   def create
     # Instantiate a new object using form parameters
@@ -16,9 +15,11 @@ class ComplaintsController < ApplicationController
     # Save the object
     if @complaint.save
       # If save succeeds, redirect to the index action
-      redirect_to(:action => 'new')
+        flash[:notice] = "Complaint submitted successfully"
+      redirect_to(root_path)
     else
       # If save fails, redisplay the form so user can fix problems
+        flash[:alert] = "Failed to Submit Complaint, Please Try Again !! "
       render('new')
     end
   end
@@ -31,10 +32,11 @@ class ComplaintsController < ApplicationController
     # Update the object
     if @complaint.update_attributes(complaint_params)
       # If update succeeds, redirect to the index action
-#      flash[:notice] = "Complaint Updated successfully"
+      flash[:notice] = "Complaint Updated successfully"
       redirect_to(:action => 'show', :id => @complaint.id)
     else
       # If update fails, redisplay the form so user can fix problems
+        flash[:alert] = "Complaint Failed to Update"
       render('edit')
     end
   end
