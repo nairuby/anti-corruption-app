@@ -1,3 +1,61 @@
+<div align="center">
+    <div style="width: 700px" align="left">
+        <div style="margin-top: 3em; ">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h2 align="center" class="panel-title"><%= 'Showing Details for "'+ @complaint.name+ '"' %></h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover ">
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <td><%= @complaint.name %></td>
+                            </tr>
+                            <tr>
+                                <th>Gender</th>
+                                <td><%= @complaint.gender %></td>
+                            </tr>
+                            <tr>
+                                <th>Age</th>
+                                <td><%= @complaint.age %></td>
+                            </tr>
+                            <tr>
+                                <th>Location</th>
+                                <td><%= @complaint.incident_location %></td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td><%= @complaint.phone %></td>
+                            </tr>
+                            <tr>
+                                <th>Email Address</th>
+                                <td><%= @complaint.email %></td>
+                            </tr>
+                            <tr>
+                                <th>Duty Bearer</th>
+                                <td><%= @complaint.duty_bearer %></td>
+                            </tr>
+                            <tr>
+                                <th>FeedBack</th>
+                                <td><%= @complaint.feedback %></td>
+                            </tr>
+                            <tr>
+                                <th>Created</th>
+                                <td><%= @complaint.created_at %></td>
+                            </tr>
+                            <tr>
+                                <th>Updated</th>
+                                <td><%= @complaint.updated_at %></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--
 <%# if !flash[:notice].blank? %>
   <div class="notice">
@@ -8,51 +66,4 @@
 
 <a class="btn btn-primary"<%= link_to("<< Back to Complaints List", {:action => 'index'}, :class => 'back-link') %></a></br>
 
-<div class="complaints show">
-  <h2>Show Complaints</h2>
-
-  <table summary="Complaint detail view">
-    <tr>
-      <th>Name</th>
-      <td><%= @complaint.name %></td>
-    </tr>
-    <tr>
-      <th>Gender</th>
-      <td><%= @complaint.gender %></td>
-    </tr>
-    <tr>
-      <th>Age</th>
-      <td><%= @complaint.age %></td>
-    </tr>
-    <tr>
-      <th>Location</th>
-      <td><%= @complaint.incident_location %></td>
-    </tr>
-    <tr>
-      <th>Phone</th>
-      <td><%= @complaint.phone %></td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td><%= @complaint.email %></td>
-    </tr>
-     <tr>
-      <th>Duty Bearer</th>
-      <td><%= @complaint.duty_bearer %></td>
-    </tr>
-    <tr>
-      <th>Feedback</th>
-      <td><%= @complaint.feedback %></td>
-    </tr>
-    <tr>
-      <th>Created</th>
-      <td><%= @complaint.created_at %></td>
-    </tr>
-    <tr>
-      <th>Updated</th>
-      <td><%= @complaint.updated_at %></td>
-    </tr>
-  </table>
-
-</div>
 
